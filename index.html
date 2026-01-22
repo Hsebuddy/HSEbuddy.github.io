@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HSE BUDDY - Peşəkar SƏTƏM sənədləri, Risk Assessmentlər və Təlim videoları portalı.">
     <title>HSE BUDDY - SƏTƏM Portalı</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -10,21 +11,36 @@
         h1 { font-family: 'Oswald', sans-serif; }
         h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
         body { font-family: 'Roboto', sans-serif; }
-        .dropdown:hover .dropdown-menu { display: block; }
+        
+        /* Dropdown animasiyası */
+        .dropdown:hover .dropdown-menu { 
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Video kartları üçün hover effekti */
+        .video-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(251, 191, 36, 0.3);
+        }
+
         html { scroll-behavior: smooth; }
         .header-shadow { text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); }
-        
-        /* Mobil menyu keçid effekti */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
 
     <nav class="bg-[#0b2e24] text-white p-4 sticky top-0 z-50 border-b-2 border-[#fbbf24]">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex flex-col">
+            <div class="flex flex-col group cursor-pointer">
                 <h1 class="text-3xl md:text-5xl tracking-tight leading-none text-white header-shadow uppercase">
                     HSE <span class="text-[#fbbf24]">BUDDY</span>
                 </h1>
@@ -34,9 +50,9 @@
             </div>
 
             <div class="hidden md:flex gap-8 items-center">
-                <a href="#" class="nav-link hover:text-[#fbbf24] transition uppercase text-sm font-bold">Ana Səhifə</a>
+                <a href="#" class="nav-link hover:text-[#fbbf24] transition-colors uppercase text-sm font-bold border-b-2 border-transparent hover:border-[#fbbf24] py-1">Ana Səhifə</a>
                 <div class="relative dropdown">
-                    <button class="bg-[#fbbf24] text-[#0b2e24] px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-sm">
+                    <button class="bg-[#fbbf24] text-[#0b2e24] px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-sm hover:bg-yellow-500 transition-all">
                         Sənədlər <span>▼</span>
                     </button>
                     <div class="dropdown-menu absolute hidden right-0 mt-2 w-64 bg-white shadow-2xl z-50 border-t-4 border-[#0b2e24]">
@@ -45,11 +61,11 @@
                         <a href="#" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 font-bold">İnsident Hesabatları</a>
                     </div>
                 </div>
-                <a href="#elaqe" class="nav-link text-sm font-bold hover:text-[#fbbf24] uppercase">Əlaqə</a>
+                <a href="#elaqe" class="nav-link text-sm font-bold hover:text-[#fbbf24] uppercase border-b-2 border-transparent hover:border-[#fbbf24] py-1">Əlaqə</a>
             </div>
 
             <div class="md:hidden">
-                <button id="menu-btn" class="text-[#fbbf24] focus:outline-none">
+                <button id="menu-btn" class="text-[#fbbf24] focus:outline-none hover:scale-110 transition-transform">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -57,42 +73,51 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0b2e24] border-t border-gray-700 mt-4 pb-4 space-y-4">
-            <a href="#" class="block px-4 py-2 text-white font-bold border-b border-gray-800">Ana Səhifə</a>
-            <div class="px-4 py-2 text-[#fbbf24] font-black uppercase text-sm">Sənədlər:</div>
-            <a href="#" class="block px-8 py-1 text-gray-300 text-sm italic">Risk Assessmentlər</a>
-            <a href="#" class="block px-8 py-1 text-gray-300 text-sm italic">Toolbox Talk</a>
-            <a href="#" class="block px-8 py-1 text-gray-300 text-sm italic border-b border-gray-800 pb-3">İnsident Hesabatları</a>
-            <a href="#elaqe" class="block px-4 py-2 text-white font-bold">Əlaqə</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0b2e24] border-t border-gray-700 mt-4 pb-4 space-y-2 animate-fadeIn">
+            <a href="#" class="block px-4 py-3 text-white font-bold border-b border-gray-800">Ana Səhifə</a>
+            <div class="px-4 py-2 text-[#fbbf24] font-black uppercase text-xs tracking-widest">Sənədlər:</div>
+            <a href="#" class="block px-8 py-2 text-gray-300 text-sm hover:text-white transition-colors">Risk Assessmentlər</a>
+            <a href="#" class="block px-8 py-2 text-gray-300 text-sm hover:text-white transition-colors">Toolbox Talk</a>
+            <a href="#" class="block px-8 py-2 text-gray-300 text-sm hover:text-white transition-colors border-b border-gray-800 pb-3">İnsident Hesabatları</a>
+            <a href="#elaqe" class="block px-4 py-3 text-white font-bold">Əlaqə</a>
         </div>
     </nav>
 
-    <header class="py-16 text-center bg-white border-b border-gray-200 px-4">
-        <h2 class="text-4xl md:text-6xl font-extrabold text-[#0b2e24] mb-4">Xoş Gəlmisiniz!</h2>
-        <div class="w-20 h-2 bg-[#fbbf24] mx-auto mb-6"></div>
-        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Peşəkar SƏTƏM sənədləri və rəqəmsal təlim videoları.</p>
+    <header class="py-20 text-center bg-white border-b border-gray-200 px-4 relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-[#0b2e24] mb-4 tracking-tight">Xoş Gəlmisiniz!</h2>
+            <div class="w-24 h-2 bg-[#fbbf24] mx-auto mb-6 rounded-full"></div>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">Peşəkar SƏTƏM sənədləri və rəqəmsal təlim videoları.</p>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+            <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+            <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" stroke-width="1"/></pattern></defs>
+        </div>
     </header>
 
-    <main class="container mx-auto py-12 px-4 max-w-5xl">
-        <div class="mb-8 border-l-8 border-[#0b2e24] pl-4">
-            <h3 class="text-3xl font-black text-[#0b2e24] uppercase italic">Təlim Videoları</h3>
+    <main class="container mx-auto py-16 px-4 max-w-5xl">
+        <div class="mb-12 border-l-8 border-[#0b2e24] pl-6">
+            <h3 class="text-3xl font-black text-[#0b2e24] uppercase italic tracking-tighter">Təlim Videoları</h3>
+            <p class="text-gray-500 text-sm mt-1 uppercase font-bold">Biliklərinizi yeniləyin</p>
         </div>
 
         <div class="grid grid-cols-1 gap-12">
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#fbbf24]">
-                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-xs uppercase">✨ Ən son yüklənən</div>
-                <div class="aspect-video">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/kDmL6A6PLWk" frameborder="0" allowfullscreen></iframe>
+            <div class="video-card bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#fbbf24]">
+                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-[10px] md:text-xs uppercase flex items-center gap-2">
+                    <span class="animate-pulse">✨</span> Ən son yüklənən video təlim
+                </div>
+                <div class="aspect-video bg-black">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/kDmL6A6PLWk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="bg-white rounded shadow-md overflow-hidden border-l-4 border-[#0b2e24]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="video-card bg-white rounded shadow-lg overflow-hidden border-l-4 border-[#0b2e24]">
                     <div class="aspect-video">
                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/7ga3R0g0634" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="bg-white rounded shadow-md overflow-hidden border-l-4 border-[#0b2e24]">
+                <div class="video-card bg-white rounded shadow-lg overflow-hidden border-l-4 border-[#0b2e24]">
                     <div class="aspect-video">
                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/wkhZRQHrXl0" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -101,30 +126,32 @@
         </div>
     </main>
 
-    <section id="elaqe" class="bg-[#0b2e24] text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-3xl font-bold mb-10 text-[#fbbf24] uppercase tracking-widest border-b border-[#fbbf24] inline-block pb-2">Əlaqə</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="bg-[#0d3b2e] p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4">
-                    <span class="text-3xl">📞</span>
+    <section id="elaqe" class="bg-[#0b2e24] text-white py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h3 class="text-3xl font-bold mb-12 text-[#fbbf24] uppercase tracking-[0.2em] border-b-2 border-[#fbbf24] inline-block pb-3">Əlaqə</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-[#0d3b2e] p-8 rounded-lg border-l-4 border-[#fbbf24] flex items-center gap-6 hover:bg-[#124d3d] transition-colors group">
+                    <span class="text-4xl group-hover:scale-110 transition-transform">📞</span>
                     <div class="text-left">
-                        <p class="text-[#fbbf24] text-[10px] font-bold uppercase">Telefon</p>
-                        <a href="tel:+994102367721" class="text-xl font-bold">+994 10 236 77 21</a>
+                        <p class="text-[#fbbf24] text-[10px] font-bold uppercase tracking-widest mb-1">Telefon xətti</p>
+                        <a href="tel:+994102367721" class="text-xl md:text-2xl font-bold hover:text-[#fbbf24] transition-colors">+994 10 236 77 21</a>
                     </div>
                 </div>
-                <div class="bg-[#0d3b2e] p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4">
-                    <span class="text-3xl">📧</span>
+                <div class="bg-[#0d3b2e] p-8 rounded-lg border-l-4 border-[#fbbf24] flex items-center gap-6 hover:bg-[#124d3d] transition-colors group">
+                    <span class="text-4xl group-hover:scale-110 transition-transform">📧</span>
                     <div class="text-left">
-                        <p class="text-[#fbbf24] text-[10px] font-bold uppercase">E-poçt</p>
-                        <a href="mailto:hsebuddy40@gmail.com" class="text-lg font-bold">hsebuddy40@gmail.com</a>
+                        <p class="text-[#fbbf24] text-[10px] font-bold uppercase tracking-widest mb-1">E-poçt ünvanı</p>
+                        <a href="mailto:hsebuddy40@gmail.com" class="text-lg md:text-xl font-bold hover:text-[#fbbf24] transition-colors underline decoration-[#fbbf24] underline-offset-4">hsebuddy40@gmail.com</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-6 text-center text-gray-500 text-[10px] uppercase">
-        © 2026 HSE <span class="text-[#fbbf24]">BUDDY</span> - Təhlükəsizlik Məsuliyyətimizdir.
+    <footer class="bg-black py-8 text-center border-t border-gray-900">
+        <p class="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.2em]">
+            © 2026 HSE <span class="text-[#fbbf24] font-bold">BUDDY</span> - Təhlükəsizlik Məsuliyyətimizdir.
+        </p>
     </footer>
 
     <script>
@@ -133,6 +160,14 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // Menyu linklərinə tıklandıqda mobil menyunu bağla
+        const navLinks = menu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
         });
     </script>
 </body>
