@@ -10,7 +10,10 @@
 
     <nav class="bg-green-800 p-4 text-white shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tight">HSE Buddy</h1>
+            <div class="flex items-center gap-3">
+                <img src="WhatsApp%20Image%202026-01-21%20at%2000.11.37%20(1).jpeg" alt="HSE Buddy Logo" class="h-12 w-12 rounded-full border-2 border-white object-cover">
+                <h1 class="text-2xl font-bold tracking-tight">HSE Buddy</h1>
+            </div>
             <ul class="flex space-x-4">
                 <li><a href="#" class="hover:text-green-200">Ana Səhifə</a></li>
                 <li><a href="#documents" class="hover:text-green-200">Sənədlər</a></li>
@@ -18,31 +21,37 @@
         </div>
     </nav>
 
-    <header class="bg-white py-12 border-b text-center">
-        <h2 class="text-6xl font-extrabold text-gray-800">Xoş Gəlmisiniz!</h2>
-        <p class="mt-4 text-gray-600">SƏTƏM sənədləri və təlim materialları üçün rəqəmsal platforma.</p>
+    <header class="bg-white py-20 border-b text-center">
+        <h2 class="text-6xl font-extrabold text-gray-800 mb-4">Xoş Gəlmisiniz!</h2>
+        <p class="text-xl text-gray-600">SƏTƏM sənədləri və təlim materialları üçün rəqəmsal platforma.</p>
     </header>
 
-    <main id="documents" class="container mx-auto py-10 px-4">
-        <h3 class="text-xl font-bold mb-6 text-green-900 border-l-4 border-green-600 pl-3">SƏTƏM Sənədləri (HSE Documents)</h3>
+    <main id="documents" class="container mx-auto py-12 px-4">
+        <h3 class="text-3xl font-bold mb-8 text-green-900 border-l-8 border-green-600 pl-4">SƏTƏM Resursları</h3>
         
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-t-4 border-green-600">
-                <h4 class="font-bold text-lg mb-2 text-gray-800">Risklərin Qiymətləndirilməsi</h4>
-                <p class="text-sm text-gray-600 mb-4">İş yerindəki riskləri müəyyən etmək üçün forma.</p>
-                <a href="documents/risk-assessment.pdf" class="inline-block bg-green-700 text-white px-4 py-2 rounded text-sm hover:bg-green-800">Yüklə (PDF)</a>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4 border-green-600">
+                <h4 class="font-bold text-xl mb-3 text-gray-800">Risk Assessmentlər</h4>
+                <p class="text-gray-600 mb-6">İş yerindəki risklərin qiymətləndirilməsi üçün peşəkar şablonlar.</p>
+                <a href="#" class="block text-center bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition">Yüklə (PDF)</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border-t-4 border-orange-500">
-                <h4 class="font-bold text-lg mb-2 text-gray-800">Toolbox Talk (Təlimat)</h4>
-                <p class="text-sm text-gray-600 mb-4">Gündəlik təhlükəsizlik təlimatı üçün mövzular.</p>
-                <a href="documents/toolbox-talk.pdf" class="inline-block bg-orange-600 text-white px-4 py-2 rounded text-sm hover:bg-orange-700">Yüklə (PDF)</a>
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4 border-orange-500">
+                <h4 class="font-bold text-xl mb-3 text-gray-800">Toolbox Talk</h4>
+                <p class="text-gray-600 mb-6">Gündəlik təhlükəsizlik brifinqləri üçün maarifləndirici mövzular.</p>
+                <a href="#" class="block text-center bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition">Yüklə (PDF)</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4 border-blue-500">
+                <h4 class="font-bold text-xl mb-3 text-gray-800">İnsident Hesabatları</h4>
+                <p class="text-gray-600 mb-6">Bədbəxt hadisələrin və insidentlərin qeydiyyatı üçün formalar.</p>
+                <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Yüklə (PDF)</a>
             </div>
         </div>
     </main>
 
     <footer class="text-center py-10 text-gray-500 text-sm">
-        &copy; 2026 HSE Buddy. Bütün hüquqlar qorunur.
+        © 2026 HSE Buddy. Bütün hüquqlar qorunur.
     </footer>
 
 </body>
