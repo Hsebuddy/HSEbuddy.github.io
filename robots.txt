@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hsebuddy.github.io/HSEbuddy.github.io/sitemap.xml
