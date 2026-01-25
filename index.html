@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSE BUDDY | Təlimlər və Materiallar</title>
+    <title>HSE BUDDY | SƏTƏM Portalı - Təlimlər və Materiallar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,7 @@
         body { font-family: 'Roboto', sans-serif; }
         .dropdown:hover .dropdown-menu { display: block; }
         html { scroll-behavior: smooth; }
+        .header-shadow { text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -19,28 +20,40 @@
 <nav class="bg-[#0b2e24] text-white p-4 sticky top-0 z-50 border-b-2 border-[#fbbf24]">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex flex-col">
-            <a href="/" class="text-3xl md:text-5xl tracking-tight leading-none text-white font-bold uppercase">
+            <a href="/" class="text-3xl md:text-5xl tracking-tight leading-none text-white header-shadow uppercase font-bold">
                 HSE <span class="text-[#fbbf24]">BUDDY</span>
             </a>
-            <p class="text-[9px] md:text-xs uppercase tracking-[0.3em] text-gray-300 mt-1">SƏTƏM PORTALI</p>
+            <p class="text-[9px] md:text-xs uppercase tracking-[0.3em] text-gray-300 font-medium mt-1">SƏTƏM PORTALI</p>
         </div>
 
         <div class="hidden md:flex gap-8 items-center">
             <a href="#" class="nav-link hover:text-[#fbbf24] transition uppercase text-sm font-bold">Ana Səhifə</a>
+            
             <div class="relative dropdown">
                 <button class="bg-[#fbbf24] text-[#0b2e24] px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-sm">
                     Təlimlər <span>▼</span>
                 </button>
                 <div class="dropdown-menu absolute hidden right-0 mt-2 w-72 bg-white shadow-2xl z-50 border-t-4 border-[#0b2e24]">
                     <a href="YANĞIN TƏHLÜKƏSİZLİYİ.pptx" download class="block px-6 py-3 text-gray-800 hover:bg-gray-100 font-bold border-b text-sm">
-                        📄 Yanğın təhlükəsizliyi materialı (Yüklə)
+                        📄 Yanğın Təhlükəsizliyi Materialı (Yüklə)
                     </a>
                 </div>
             </div>
+            
             <a href="#elaqe" class="nav-link text-sm font-bold hover:text-[#fbbf24] uppercase">Əlaqə</a>
         </div>
     </div>
 </nav>
+
+<header class="py-16 text-center bg-white border-b border-gray-200 px-4">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-[#0b2e24] mb-4 uppercase">
+        Peşəkar SƏTƏM Resursları
+    </h2>
+    <div class="w-24 h-2 bg-[#fbbf24] mx-auto mb-6"></div>
+    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto italic">
+        Ən son təlim materialları, videolar və peşəkar sənədləşmə nümunələri.
+    </p>
+</header>
 
 <main class="container mx-auto py-12 px-4 max-w-4xl">
     <section>
@@ -48,45 +61,11 @@
             <h3 class="text-3xl font-black text-[#0b2e24] uppercase italic">HSE Təlim Videoları</h3>
         </div>
 
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-12">
             
             <article class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#fbbf24]">
-                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-xs uppercase italic">🔥 Ən Son Keçirilən: Yanğın Təhlükəsizliyi Təlimi</div>
+                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-xs uppercase italic">🔥 Yanğın Təhlükəsizliyi Təlimi (Ən son)</div>
                 <div class="aspect-video">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wJ7w_VE841s" title="Yanğın təhlükəsizliyi təlimi" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wJ7w_VE841s" title="Yanğın təhlükəsizliyi" frameborder="0" allowfullscreen></iframe>
                 </div>
             </article>
-
-            <article class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#0b2e24]">
-                <div class="bg-[#0b2e24] text-white px-4 py-2 font-black text-xs uppercase italic">🎯 HSE Müsahibə Hazırlığı</div>
-                <div class="aspect-video">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/kDmL6A6PLWk" title="SƏTƏM Müsahibə Hazırlığı" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#0b2e24]">
-                <div class="bg-[#0b2e24] text-white px-4 py-2 font-black text-xs uppercase italic">📋 HSE Sənədləşmə</div>
-                <div class="aspect-video">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/7ga3R0g0634" title="HSE Sənədləşmə" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#0b2e24]">
-                <div class="bg-[#0b2e24] text-white px-4 py-2 font-black text-xs uppercase italic">🛡️ Təhlükəsizlik Texnikası</div>
-                <div class="aspect-video">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wkhZRQHrXl0" title="Təhlükəsizlik Texnikası" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </article>
-
-        </div>
-    </section>
-</main>
-
-<footer id="elaqe" class="bg-[#0b2e24] text-white py-12 mt-12">
-    <div class="container mx-auto px-4 text-center">
-        <p>© 2026 HSE BUDDY - Peşəkar SƏTƏM Portalı</p>
-    </div>
-</footer>
-
-</body>
-</html>
