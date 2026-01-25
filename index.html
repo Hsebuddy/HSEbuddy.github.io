@@ -11,7 +11,7 @@
         h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
         body { font-family: 'Roboto', sans-serif; }
         
-        /* Menyunun sabit qalması üçün xüsusi dizayn */
+        /* Menyu sabitliyi üçün */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-menu {
             display: none;
@@ -19,14 +19,14 @@
             top: 100%;
             right: 0;
             background: white;
-            min-width: 300px;
+            min-width: 280px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border-top: 4px solid #0b2e24;
             z-index: 1000;
         }
-        /* Mouse ilə keçid zamanı boşluq qalmasın deyə */
+        /* Menyu ilə buton arasında görünməz körpü (itib batmasın deyə) */
         .dropdown:hover .dropdown-menu { display: block; }
-        .dropdown::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 100%; height: 10px; }
+        .dropdown::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 100%; height: 15px; }
 
         html { scroll-behavior: smooth; }
         .header-shadow { text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); }
@@ -40,7 +40,7 @@
             <a href="/" class="text-3xl md:text-5xl tracking-tight leading-none text-white header-shadow uppercase font-bold">
                 HSE <span class="text-[#fbbf24]">BUDDY</span>
             </a>
-            <p class="text-[9px] md:text-xs uppercase tracking-[0.3em] text-gray-300 font-medium mt-1">SƏTƏM PORTALI</p>
+            <p class="text-[9px] md:text-xs uppercase tracking-[0.3em] text-gray-300 font-medium mt-1 uppercase">SƏTƏM Portalı</p>
         </div>
 
         <div class="hidden md:flex gap-8 items-center">
@@ -51,7 +51,7 @@
                     Təlimlər ▾
                 </button>
                 <div class="dropdown-menu">
-                    <a href="YANĞIN TƏHLÜKƏSİZLİYİ.pdf" download="Yangin_Tehlukesizliyi_Telimi.pdf" class="block px-6 py-4 text-gray-800 hover:bg-yellow-50 font-bold border-b border-gray-100">
+                    <a href="yangin_tehlukesizliyi.pdf" download="HSE_Buddy_Yanqin_Tehlukesizliyi.pdf" class="block px-6 py-4 text-gray-800 hover:bg-yellow-50 font-bold border-b border-gray-100 transition-all">
                         <span class="text-red-600 mr-2">📄</span> Yanğın Materialı (Yüklə)
                     </a>
                 </div>
@@ -87,28 +87,28 @@
 
 <section id="elaqe" class="bg-[#0b2e24] text-white py-16">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-10 text-[#fbbf24] uppercase border-b-2 border-[#fbbf24] inline-block pb-2">Əlaqə</h2>
+        <h2 class="text-3xl font-bold mb-10 text-[#fbbf24] uppercase border-b-2 border-[#fbbf24] inline-block pb-2 italic">Əlaqə Məlumatları</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div class="bg-[#0d3b2e] p-8 rounded-lg border-l-4 border-[#fbbf24] flex items-center gap-4">
                 <span class="text-4xl">📞</span>
                 <div class="text-left">
-                    <p class="text-[#fbbf24] text-xs font-bold uppercase">Telefon</p>
-                    <a href="tel:+994102367721" class="text-xl font-bold">+994 10 236 77 21</a>
+                    <p class="text-[#fbbf24] text-xs font-bold uppercase mb-1">Telefon</p>
+                    <a href="tel:+994102367721" class="text-xl md:text-2xl font-bold hover:text-[#fbbf24] transition">+994 10 236 77 21</a>
                 </div>
             </div>
             <div class="bg-[#0d3b2e] p-8 rounded-lg border-l-4 border-[#fbbf24] flex items-center gap-4">
                 <span class="text-4xl">📧</span>
                 <div class="text-left">
-                    <p class="text-[#fbbf24] text-xs font-bold uppercase">Email</p>
-                    <a href="mailto:hsebuddy40@gmail.com" class="text-lg font-bold">hsebuddy40@gmail.com</a>
+                    <p class="text-[#fbbf24] text-xs font-bold uppercase mb-1">Email</p>
+                    <a href="mailto:hsebuddy40@gmail.com" class="text-lg md:text-xl font-bold hover:text-[#fbbf24] transition">hsebuddy40@gmail.com</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-black py-8 text-center text-gray-500 text-[10px] uppercase">
-    <p>© 2026 HSE BUDDY - SƏTƏM Portalı</p>
+<footer class="bg-black py-8 text-center text-gray-500 text-[10px] uppercase font-bold tracking-widest">
+    <p>© 2026 HSE <span class="text-[#fbbf24]">BUDDY</span> - Peşəkar SƏTƏM Resurs mərkəzi.</p>
 </footer>
 
 </body>
