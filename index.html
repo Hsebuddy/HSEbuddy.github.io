@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="google262b86c83e1ae46d" />
     <title>HSE BUDDY | SƏTƏM Portalı - Sənədlər və Təlimlər</title>
     <meta name="robots" content="index, follow">
@@ -12,27 +13,18 @@
     <style>
         h1 { font-family: 'Oswald', sans-serif; }
         h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
-        body { font-family: 'Roboto', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Roboto', sans-serif; }
         .dropdown-menu.active { display: block !important; }
+        /* Akkordeon üçün əlavə stil */
         .category-content { display: none; }
         .category-content.active { display: block; }
         html { scroll-behavior: smooth; }
         .header-shadow { text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); }
-        
-        /* Mobil cihazlar üçün xüsusi scroll və ölçü tənzimləmələri */
-        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #fbbf24; border-radius: 10px; }
-        
-        @media (max-width: 768px) {
-            #docs-menu {
-                position: fixed;
-                top: 80px;
-                left: 10px;
-                right: 10px;
-                width: auto;
-                max-height: 80vh;
-            }
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -42,83 +34,97 @@
 <nav class="bg-[#0b2e24] text-white p-4 sticky top-0 z-50 border-b-2 border-[#fbbf24]">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex flex-col">
-            <a href="/" class="text-2xl md:text-5xl tracking-tight leading-none text-white header-shadow uppercase font-bold">
+            <a href="/" class="text-3xl md:text-5xl tracking-tight leading-none text-white header-shadow uppercase font-bold">
                 HSE <span class="text-[#fbbf24]">BUDDY</span>
             </a>
-            <p class="text-[8px] md:text-xs uppercase tracking-[0.3em] text-gray-300 font-medium mt-1">SƏTƏM PORTALI</p>
+            <p class="text-[9px] md:text-xs uppercase tracking-[0.3em] text-gray-300 font-medium mt-1">SƏTƏM PORTALI</p>
         </div>
 
-        <div class="flex gap-4 items-center">
-            <div class="hidden md:flex gap-6 mr-6">
-                <a href="#" class="nav-link hover:text-[#fbbf24] transition uppercase text-sm font-bold">Ana Səhifə</a>
-                <a href="#elaqe" class="nav-link text-sm font-bold hover:text-[#fbbf24] uppercase">Əlaqə</a>
-            </div>
-
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#" class="nav-link hover:text-[#fbbf24] transition uppercase text-sm font-bold">Ana Səhifə</a>
+            
             <div class="relative">
-                <button id="docs-btn" class="bg-[#fbbf24] text-[#0b2e24] px-4 md:px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-xs md:text-sm focus:outline-none shadow-lg">
-                    Sənədlər <span class="text-[10px]">▼</span>
+                <button id="docs-btn" class="bg-[#fbbf24] text-[#0b2e24] px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-sm focus:outline-none">
+                    Sənədlər <span>▼</span>
                 </button>
-                
-                <div id="docs-menu" class="dropdown-menu absolute hidden right-0 mt-3 w-72 md:w-80 bg-white shadow-2xl z-50 border-t-4 border-[#0b2e24] max-h-[70vh] md:max-h-96 overflow-y-auto custom-scroll rounded-b-lg">
+                <div id="docs-menu" class="dropdown-menu absolute hidden right-0 mt-2 w-80 bg-white shadow-2xl z-50 border-t-4 border-[#0b2e24] max-h-96 overflow-y-auto custom-scroll">
                     
                     <div class="border-b">
-                        <button onclick="toggleAccordion(event, 'check-list')" class="w-full text-left px-4 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-[#0b2e24] font-black text-[11px] uppercase">
-                            📂 Yoxlama Vərəqləri (BÜTÜN) <span>+</span>
+                        <button onclick="toggleAccordion(event, 'check-list')" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-[#0b2e24] font-black text-[11px] uppercase">
+                            📂 Yoxlama Vərəqləri <span>+</span>
                         </button>
                         <div id="check-list" class="category-content bg-white">
-                            <a href="01_avtobus.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 01. Avtobus</a>
-                            <a href="02_yukleyici.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 02. Ön Yükləyici</a>
-                            <a href="03_sumasini.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 03. Su Maşını</a>
-                            <a href="04_manipulyator.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 04. Manipulyator</a>
-                            <a href="05_avtomobil.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 05. Avtomobil</a>
-                            <a href="06_avtosebet.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 06. Avtosəbət</a>
-                            <a href="07_trailer.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 07. Qoşqulu Trailer</a>
-                            <a href="08_kipleyici.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 08. Kipləyici</a>
-                            <a href="09_qreyder.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 09. Qreyder</a>
-                            <a href="10_avtoyukleyici.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 10. Avtoyükləyici</a>
-                            <a href="11_ekskavator.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 11. Ekskavator</a>
-                            <a href="12_yukmasini.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 12. Yük Maşını</a>
-                            <a href="13_beton_token.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 13. Beton Tökən</a>
-                            <a href="14_beton_qarisdiran.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 14. Beton Qarışdıran</a>
-                            <a href="15_on_arxa_yukleyici.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 15. Ön-Arxa Yükləyici</a>
-                            <a href="16_yanacaq_doldurma.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold">📥 16. Yanacaq Doldurma</a>
-                            <a href="17_avtokran.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 text-[11px] font-bold">📥 17. Avtokran</a>
+                            <a href="01_avtobus.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 01. Avtobus - Təhlükəsizlik Təlimatı</a>
+                            <a href="02_yukleyici.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 02. Yükləyici (Loader) - Təhlükəsizlik Təlimatı</a>
+                            <a href="03_sumasini.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 03. Su Maşını - Təhlükəsizlik Təlimatı</a>
+                            <a href="04_manipulyator.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 04. Manipulyator - Təhlükəsizlik Təlimatı</a>
+                            <a href="05_avtomobil.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 05. Minik Avtomobili - Təhlükəsizlik Təlimatı</a>
+                            <a href="06_avtosebet.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 06. Avtosəbət - Təhlükəsizlik Təlimatı</a>
+                            <a href="07_trailer.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 07. Treyler (Trailer) - Təhlükəsizlik Təlimatı</a>
+                            <a href="08_kipleyici.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 08. Kipləyici (Compactor) - Təhlükəsizlik Təlimatı</a>
+                            <a href="09_qreyder.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 09. Qreyder - Təhlükəsizlik Təlimatı</a>
+                            <a href="10_avtoyukleyici.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 10. Avtoyükləyici (Forklift) - Təhlükəsizlik Təlimatı</a>
+                            <a href="11_ekskavator.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 11. Ekskavator - Təhlükəsizlik Təlimatı</a>
+                            <a href="12_yukmasini.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 12. Yük Maşını (Samosval) - Təhlükəsizlik Təlimatı</a>
+                            <a href="13_beton_token.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 13. Beton Tökən - Təhlükəsizlik Təlimatı</a>
+                            <a href="14_beton_qarisdiran.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 14. Beton Qarışdıran - Təhlükəsizlik Təlimatı</a>
+                            <a href="15_on_arxa_yukleyici.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 15. Ön-Arxa Yükləyici (Backhoe Loader)</a>
+                            <a href="16_yanacaq_doldurma.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 border-b text-xs font-bold italic">📄 16. Yanacaq Doldurma - Təhlükəsizlik Təlimatı</a>
+                            <a href="17_avtokran.docx" download class="block px-8 py-2 text-gray-800 hover:bg-amber-50 text-xs font-bold italic">📄 17. Avtokran - Təhlükəsizlik Təlimatı</a>
                         </div>
                     </div>
 
                     <div class="border-b">
-                        <button onclick="toggleAccordion(event, 'risk-list')" class="w-full text-left px-4 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-[#0b2e24] font-black text-[11px] uppercase">
+                        <button onclick="toggleAccordion(event, 'risk-list')" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-[#0b2e24] font-black text-[11px] uppercase">
                             ⚠️ Riskin qiymətləndirilməsi <span>+</span>
                         </button>
-                        <div id="risk-list" class="category-content bg-white text-center py-6">
+                        <div id="risk-list" class="category-content bg-white text-center py-4">
                             <span class="text-gray-400 italic text-[10px]">Tezliklə əlavə olunacaq...</span>
                         </div>
                     </div>
+
                 </div>
             </div>
+            <a href="#elaqe" class="nav-link text-sm font-bold hover:text-[#fbbf24] uppercase">Əlaqə</a>
         </div>
+
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-[#fbbf24] focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0b2e24] border-t border-gray-700 mt-4 pb-4 max-h-[70vh] overflow-y-auto">
+        <a href="#" class="block px-4 py-2 text-white font-bold border-b border-gray-800">Ana Səhifə</a>
+        <div class="px-4 py-2 text-[#fbbf24] font-black uppercase text-sm border-b border-gray-800">Sənədlər</div>
+        <a href="01_avtobus.docx" download class="block px-8 py-2 text-gray-300 text-xs italic border-b border-gray-900">📥 01. Avtobus</a>
+        <a href="17_avtokran.docx" download class="block px-8 py-2 text-gray-300 text-xs italic border-b border-gray-900">📥 ...və digər bütün sənədlər</a>
+        <a href="#elaqe" class="block px-4 py-2 text-white font-bold border-t border-gray-800">Əlaqə</a>
     </div>
 </nav>
 
-<header class="py-12 md:py-16 text-center bg-white border-b border-gray-200 px-4">
-    <h2 class="text-3xl md:text-6xl font-extrabold text-[#0b2e24] mb-4 uppercase">Peşəkar SƏTƏM Resursları</h2>
-    <div class="w-16 h-1.5 bg-[#fbbf24] mx-auto mb-6"></div>
-    <p class="text-sm md:text-xl text-gray-600 max-w-2xl mx-auto italic">SƏTƏM müsahibə sualları, sənədləşmə və video təlimlərlə peşəkarlığınızı artırın.</p>
+<header class="py-16 text-center bg-white border-b border-gray-200 px-4">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-[#0b2e24] mb-4 uppercase">Peşəkar SƏTƏM Resursları</h2>
+    <div class="w-20 h-2 bg-[#fbbf24] mx-auto mb-6"></div>
+    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto italic">SƏTƏM müsahibə sualları, sənədləşmə və video təlimlərlə peşəkarlığınızı artırın.</p>
 </header>
 
-<main class="container mx-auto py-8 md:py-12 px-4 max-w-5xl">
+<main class="container mx-auto py-12 px-4 max-w-5xl">
     <section>
         <div class="mb-8 border-l-8 border-[#0b2e24] pl-4">
-            <h3 class="text-2xl md:text-3xl font-black text-[#0b2e24] uppercase italic">HSE Təlim Videoları</h3>
+            <h3 class="text-3xl font-black text-[#0b2e24] uppercase italic">HSE Təlim Videoları</h3>
         </div>
-        <div class="grid grid-cols-1 gap-8 md:gap-12">
+        <div class="grid grid-cols-1 gap-12">
             <article class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-[#fbbf24]">
-                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-[10px] md:text-xs uppercase italic">🎯 HSE Müsahibə Hazırlığı</div>
+                <div class="bg-[#fbbf24] text-[#0b2e24] px-4 py-2 font-black text-xs uppercase italic">🎯 HSE Müsahibə Hazırlığı</div>
                 <div class="aspect-video">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/kDmL6A6PLWk" title="SƏTƏM Müsahibə Hazırlığı" frameborder="0" allowfullscreen loading="lazy"></iframe>
                 </div>
             </article>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <article class="bg-white rounded shadow-md overflow-hidden border-l-4 border-[#0b2e24]">
                     <div class="aspect-video">
                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/7ga3R0g0634" title="HSE Sənədləşmə" frameborder="0" allowfullscreen loading="lazy"></iframe>
@@ -134,31 +140,60 @@
     </section>
 </main>
 
-<section id="elaqe" class="bg-[#0b2e24] text-white py-12 md:py-16">
+<section id="elaqe" class="bg-[#0b2e24] text-white py-16">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#fbbf24] uppercase tracking-widest border-b border-[#fbbf24] inline-block pb-2">SƏTƏM Dəstək Xətti</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
-            <div class="bg-[#0d3b2e] p-5 md:p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4 text-left">
-                <span class="text-2xl md:text-3xl">📞</span>
+        <h2 class="text-3xl font-bold mb-10 text-[#fbbf24] uppercase tracking-widest border-b border-[#fbbf24] inline-block pb-2">SƏTƏM Dəstək Xətti</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="bg-[#0d3b2e] p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4 text-left">
+                <span class="text-3xl">📞</span>
                 <div>
-                    <p class="text-[#fbbf24] text-[9px] font-bold uppercase">Telefon</p>
-                    <a href="tel:+994102367721" class="text-lg md:text-xl font-bold hover:text-[#fbbf24] transition">+994 10 236 77 21</a>
+                    <p class="text-[#fbbf24] text-[10px] font-bold uppercase">Telefon</p>
+                    <a href="tel:+994102367721" class="text-xl font-bold hover:text-[#fbbf24] transition">+994 10 236 77 21</a>
                 </div>
             </div>
-            <div class="bg-[#0d3b2e] p-5 md:p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4 text-left">
-                <span class="text-2xl md:text-3xl">📧</span>
+            <div class="bg-[#0d3b2e] p-6 rounded border-l-4 border-[#fbbf24] flex items-center gap-4 text-left">
+                <span class="text-3xl">📧</span>
                 <div>
-                    <p class="text-[#fbbf24] text-[9px] font-bold uppercase">E-poçt</p>
-                    <a href="mailto:hsebuddy40@gmail.com" class="text-base md:text-lg font-bold hover:text-[#fbbf24] transition">hsebuddy40@gmail.com</a>
+                    <p class="text-[#fbbf24] text-[10px] font-bold uppercase">E-poçt</p>
+                    <a href="mailto:hsebuddy40@gmail.com" class="text-lg font-bold hover:text-[#fbbf24] transition">hsebuddy40@gmail.com</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="bg-black py-8 text-center text-gray-500 text-[9px] uppercase px-4">
+<footer class="bg-black py-8 text-center text-gray-500 text-[10px] uppercase">
     <p>© 2026 HSE <span class="text-[#fbbf24]">BUDDY</span> - Peşəkar SƏTƏM Resurs mərkəzi.</p>
 </footer>
 
 <script>
-    const docsBtn
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+    const docsBtn = document.getElementById('docs-btn');
+    const docsMenu = document.getElementById('docs-menu');
+
+    docsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        docsMenu.classList.toggle('active');
+    });
+
+    function toggleAccordion(e, id) {
+        e.stopPropagation();
+        const target = document.getElementById(id);
+        const isOpen = target.classList.contains('active');
+        document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
+        if (!isOpen) {
+            target.classList.add('active');
+        }
+    }
+
+    window.addEventListener('click', () => {
+        if (docsMenu.classList.contains('active')) {
+            docsMenu.classList.remove('active');
+        }
+    });
+</script>
+</body>
+</html>
