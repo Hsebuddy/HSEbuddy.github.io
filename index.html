@@ -20,9 +20,9 @@
         .header-shadow { text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); }
         
         .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #fbbf24; border-radius: 10px; }
         
-        /* Mobil cihazlar üçün tam ekran menyu tənzimləməsi */
         @media (max-width: 768px) {
             #docs-menu {
                 position: fixed;
@@ -56,7 +56,7 @@
             </div>
 
             <div class="relative">
-                <button id="docs-btn" class="bg-[#fbbf24] text-[#0b2e24] px-4 md:px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-xs md:text-sm focus:outline-none shadow-lg active:scale-95 transition-transform">
+                <button id="docs-btn" class="bg-[#fbbf24] text-[#0b2e24] px-4 md:px-6 py-2 rounded-sm font-black flex items-center gap-2 uppercase text-xs md:text-sm focus:outline-none shadow-lg">
                     Sənədlər <span class="text-[10px]">▼</span>
                 </button>
                 
@@ -64,7 +64,7 @@
                     
                     <div class="border-b">
                         <button onclick="toggleAccordion(event, 'check-list')" class="w-full text-left px-4 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-[#0b2e24] font-black text-[12px] uppercase">
-                            📂 Yoxlama Vərəqləri (20 Sənəd) <span>+</span>
+                            📂 Yoxlama Vərəqləri <span>+</span>
                         </button>
                         <div id="check-list" class="category-content bg-white">
                             <a href="01_avtobus.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold italic">📥 01. Avtobus</a>
@@ -85,9 +85,9 @@
                             <a href="16_yanacaq_doldurma.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold italic">📥 16. Yanacaq Doldurma</a>
                             <a href="17_avtokran.docx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold italic">📥 17. Avtokran</a>
                             
-                            <a href="18 Anbar üçün yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-blue-700 hover:bg-blue-50 border-b text-[11px] font-bold italic">📊 18. Anbar üçün yoxlama vərəqi</a>
-                            <a href="19 Yaşayış Düşərgəsi üçün yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-blue-700 hover:bg-blue-50 border-b text-[11px] font-bold italic">📊 19. Yaşayış Düşərgəsi üçün yoxlama vərəqi</a>
-                            <a href="20 İş yerlərində ƏM və TT üzrə yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-blue-700 hover:bg-blue-50 text-[11px] font-bold italic">📊 20. İş yerlərində ƏM və TT yoxlama vərəqi</a>
+                            <a href="18 Anbar üçün yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold italic">📥 18. Anbar üçün yoxlama vərəqi</a>
+                            <a href="19 Yaşayış Düşərgəsi üçün yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 border-b text-[11px] font-bold italic">📥 19. Yaşayış Düşərgəsi üçün yoxlama vərəqi</a>
+                            <a href="20 İş yerlərində ƏM və TT üzrə yoxlama vərəqi.xlsx" download class="block px-6 py-3 text-gray-800 hover:bg-amber-50 text-[11px] font-bold italic">📥 20. İş yerlərində ƏM və TT yoxlama vərəqi</a>
                         </div>
                     </div>
 
